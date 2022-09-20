@@ -1,0 +1,31 @@
+/*
+This script is automated using the CSS Selector
+*/
+package css_locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CSS_Locators {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\Chrome Driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://login.yahoo.com/");
+		
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.cssSelector("#login-username")).sendKeys("abhiYahoo.com");
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector("#login-signin")).click();
+		
+		driver.close();
+		
+	}
+
+}
