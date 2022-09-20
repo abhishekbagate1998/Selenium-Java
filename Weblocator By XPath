@@ -1,0 +1,32 @@
+/*
+This script is used to automate with the Web locator with XPath
+*/
+
+package weblocator_Xpath;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Xpath {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\Chrome Driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://login.yahoo.com/");
+		
+		driver.manage().window().maximize();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//input[@id='login-username']")).sendKeys("abc@yahoo.com");
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//input[@id='login-signin']")).click();
+	}
+
+}
