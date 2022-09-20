@@ -1,0 +1,32 @@
+/*
+This script is automated by the Web locater by Partial Link Text
+*/
+
+package partial_link_text;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Partial_Link_Text {
+
+	public static void main(String[] args) throws InterruptedException{
+		// TODO Auto-generated method stub
+	
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\Chrome Driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://login.yahoo.com/");
+		Thread.sleep(3000);
+		
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.partialLinkText("Forgot")).click();
+		Thread.sleep(3000);
+		
+		driver.close();
+	}
+
+}
