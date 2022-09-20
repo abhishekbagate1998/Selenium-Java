@@ -1,0 +1,33 @@
+
+/*
+ * This script is used to get the web element by the ID locator
+ * */ 
+
+package weblocators_ID;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ID {
+
+	public static void main(String[] args) throws InterruptedException{
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Chrome Driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://accounts.google.com/");
+		Thread.sleep(4000);
+		
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("identifierId")).sendKeys("abc@gmail.com");
+		Thread.sleep(3000);
+		
+		driver.close();
+	}
+
+}
